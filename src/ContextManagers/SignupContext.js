@@ -2,9 +2,13 @@ import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+//AUTHENTICATION STATE MANAGEMENT
+
 const RegisterDataSource = () => {
-  // INITIAL STATE OF A NEW USER BEFORE LOGGING IN
+  //state to determine if a user already have an account or not
   const [haveAccnt, setHaveAccnt] = useState(true);
+
+  //State to hold the user's account registration data
   const newUser = {
     username: "",
     email: "",
@@ -12,15 +16,24 @@ const RegisterDataSource = () => {
     confirmPassword: "",
   };
 
-  const [user, setUser] = useState(newUser); //LOGIC TO ASSIGN USER DETAILS AROUND THE WEB.
-  const [auth, setAuth] = useState(false); // LOGIC TO CHECK IF USER IS AUTHENTICATED OR NOT.
+  //Logic to assign the user's informations around the app
+  const [user, setUser] = useState(newUser);
+
+  // Logic to check if the user is authenticated or not
+  const [auth, setAuth] = useState(false);
+
+  //Logic to handle programmatical navigations from page to page
   const navigate = useNavigate();
+
+  //Logic to assign the user's registration data to the app's user state
   const { username, email, password, confirmPassword } = user;
 
+  //Logic to save the inputted user's data into the app's user state
   const handleSetUser = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
-  }; //LOGIC TO SAVE THE USER'S INPUTS INTO THE NEW USER VARIABLE
+  };
 
+  //Logic to allow a user signup successfully
   const handleSignup = (e) => {
     e.preventDefault();
     if (
@@ -39,8 +52,9 @@ const RegisterDataSource = () => {
     } else {
       toast.error("Please fill all input fields");
     }
-  }; //LOGIC TO FINALY ALLOW A USER TO SIGN UP SUCCESSFULLY
+  };
 
+  //Logic to allow a user login successfully
   const handleLogin = (e) => {
     e.preventDefault();
     if (
@@ -62,6 +76,7 @@ const RegisterDataSource = () => {
     }
   };
 
+  //Logic o logout already logged in user from the web app
   const handleLogout = (e) => {
     e.preventDefault();
     setUser(newUser);
@@ -69,8 +84,9 @@ const RegisterDataSource = () => {
     navigate("/signup");
     window.location.reload();
     toast.success("You are Logged Out now");
-  }; //LOGIC TO LOG AN ALREADY SIGNED IN USER OUT OF THE WEBSITE
+  };
 
+  //States and logics to be exported and get used around the app
   return {
     username,
     email,
@@ -83,7 +99,7 @@ const RegisterDataSource = () => {
     handleSetUser,
     handleSignup,
     handleLogin,
-  }; //LOGICS AND VARIABLES EXPORTED TO BE USED ANYWHERE IN THE CODE BASE
+  };
 };
 
 //REACT USECONTEXT STATE MANAGER TO HELP USE OUR LOGICS AROUND OUR CODE BASE

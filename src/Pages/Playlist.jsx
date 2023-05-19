@@ -4,11 +4,18 @@ import { useRegisterContext } from "../ContextManagers/SignupContext";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
+// PLAYLIST PAGE MARKUP
 const Playlist = () => {
+  // Playlist's songs, logic to remove a song and clear all songs imported from Playlist context provider
   const { createdPlaylist, clearPlaylist, removeSong } = usePlaylistContext();
+
+  //Auth state imported from Signup context provider
   const { auth } = useRegisterContext();
+
+  //Variable to programmatically navigate pages
   const navigate = useNavigate();
 
+  //Logic to navigate unauthenticated users to the signup page
   useEffect(() => {
     if (!auth) {
       navigate("/signup");
@@ -23,6 +30,8 @@ const Playlist = () => {
         <meta name="description" content="Your Edustipend playlist page" />
         <link rel="canonical" href="/playlist" />
       </Helmet>
+
+      {/* MARKUP */}
       <div className="playlist-div">
         <h3>My Playlist</h3>
 
@@ -51,7 +60,6 @@ const Playlist = () => {
           Clear List
         </button>
       </div>
-
     </>
   );
 };

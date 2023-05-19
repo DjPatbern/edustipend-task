@@ -2,7 +2,11 @@ import React from "react";
 import { useRegisterContext } from "../ContextManagers/SignupContext";
 import { Helmet } from "react-helmet-async";
 
+// SIGUP PAGE MARKUP
+
 const SignUp = () => {
+  //Variables to hold the user's inputted data, Logic to determine & give a user an account, allow a user signup...
+  // and login imported from the Signup context provider
   const {
     haveAccnt,
     setHaveAccnt,
@@ -23,6 +27,8 @@ const SignUp = () => {
         <meta name="description" content="Edustipend playlist signup page" />
         <link rel="canonical" href="/signup" />
       </Helmet>
+
+      {/* MARKUP */}
       <div className="signup-div">
         {haveAccnt ? (
           <form onSubmit={handleLogin}>

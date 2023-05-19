@@ -2,11 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useRegisterContext } from "../ContextManagers/SignupContext";
 
+
+// CREATE PLAYLIST MARKUP
+
 const CreatePlaylist = () => {
-  const navigate = useNavigate();
-  const { username, auth } = useRegisterContext();
+
+  //Variable to enable programmatical navigation in the app
+  const navigate = useNavigate(); 
+
+  // username and auth state imported from the SignUp context provider
+  const { username, auth } = useRegisterContext(); 
 
   return (
+    // MARKUP
     <div className="create-playlist-div">
       {username && (
         <p>

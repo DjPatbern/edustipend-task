@@ -4,8 +4,11 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { CiFacebook } from "react-icons/ci";
 import { Helmet } from "react-helmet-async";
 
+//CONTACT PAGE MARKUP
 const Contact = () => {
+  //State to toogle user to the send email inputs
   const [sendMail, setSendMail] = useState(false);
+
   return (
     <>
       {/* REACT HELMET IS USED FOR SEO TRACKING */}
@@ -15,6 +18,7 @@ const Contact = () => {
         <link rel="canonical" href="/contact" />
       </Helmet>
 
+      {/* MARKUP */}
       <div className="contact-div">
         <div className="contact-div">
           {sendMail ? (

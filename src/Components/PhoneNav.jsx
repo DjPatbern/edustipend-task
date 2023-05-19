@@ -4,8 +4,11 @@ import { AiOutlineHome } from "react-icons/ai";
 import { RiPlayListFill } from "react-icons/ri";
 import { BiTrendingUp } from "react-icons/bi";
 
-const Footer = () => {
+// PHONE NAV MARKUP
+const PhoneNav = () => {
+  //Navigation development for small screen phones
   return (
+    // MARKUP
     <div className="phone-footer">
       <Link to="/">
         <AiOutlineHome className="phonenav-link" />
@@ -20,4 +23,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default PhoneNav;

@@ -1,7 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-toastify";
 
+// PLAYLIST AND TRENDING SONGS STATE MANAGEMENT
+
 const PlaylistStore = () => {
+  //State to hold list of trending songs
   const [trendingList] = useState([
     { title: "Unavailable", artiste: "Davido", id: 1, added: false },
     { title: "Put am", artiste: "Joedy B", id: 2, added: false },
@@ -9,10 +12,11 @@ const PlaylistStore = () => {
     { title: "For the road", artiste: "Davido", id: 4, added: false },
     { title: "Shuperu", artiste: "Kizz Daniel", id: 5, added: false },
   ]);
-  const [createdPlaylist, setCreatedPlaylist] = useState([]); //STATE TO HOLD USER'S WISH LIST ADDED FROM SUGGESTED WISH
 
-  //SUGGESTS
-  // LOGIC TO ADD CLICKED BY THE USER AT SUGGESTED PAGE TO THE USER'S WISH LIST
+  //State to hold the list of songs in the user's playlist
+  const [createdPlaylist, setCreatedPlaylist] = useState([]);
+
+  // Logic to add a song to the user's playlist
   const addSong = async (song) => {
     let findSong = await createdPlaylist.find((i) => {
       return i.id === song.id;
@@ -42,7 +46,7 @@ const PlaylistStore = () => {
     }
   };
 
-  // LOGIC TO REMOVE A CLICKED WISH FROM SUGGESTED WISH LIST FROM THE USER'S WISH LIST
+  // Logic to remove a song from the user's playlist
   const removeSong = async (song) => {
     const newPlaylist = createdPlaylist.filter(
       (eachSong) => eachSong.id !== song.id
@@ -50,11 +54,14 @@ const PlaylistStore = () => {
     setCreatedPlaylist(newPlaylist);
   };
 
+  //Logic to remove all the songs in the user's playlist
   const clearPlaylist = async () => {
     setCreatedPlaylist([]);
-    toast.warn("Playlist Cleared")
+    toast.warn("Playlist Cleared");
   };
 
+
+  //States and logics to be exported and get used around the app
   return {
     removeSong,
     addSong,
@@ -64,6 +71,8 @@ const PlaylistStore = () => {
   };
 };
 
+
+//REACT USECONTEXT STATE MANAGER TO HELP USE OUR LOGICS AND STATES AROUND OUR CODE BASE
 const PlaylistContext = createContext([]);
 
 export function usePlaylistContext() {

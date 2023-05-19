@@ -1,9 +1,10 @@
 import React from "react";
 import CreatePlaylist from "../Components/CreatePlaylist";
 import TrendingSongs from "../Components/TrendingSongs";
-import Footer from "../Components/Footer";
+import PhoneNav from "../Components/PhoneNav";
 import { Helmet } from "react-helmet-async";
 
+// HOME PAGE MARKUP
 const HomePage = () => {
   return (
     <>
@@ -16,6 +17,8 @@ const HomePage = () => {
         />
         <link rel="canonical" href="/" />
       </Helmet>
+
+      {/* MARKUP */}
       <div className="create-trending-flex">
         <div style={{ flex: "2" }}>
           <CreatePlaylist />
@@ -24,7 +27,7 @@ const HomePage = () => {
           <TrendingSongs />
         </aside>
         <footer>
-          <Footer />
+          <PhoneNav />
         </footer>
       </div>
     </>

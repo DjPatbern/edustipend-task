@@ -9,10 +9,10 @@ const HomePage = () => {
     <>
       {/* REACT HELMET IS USED FOR SEO TRACKING */}
       <Helmet>
-        <title>Home - Edustipends Playlist</title>
+        <title>Home - Edustipend Playlist</title>
         <meta
           name="description"
-          content="Welcome to Edustipends playlist homepage, your best music play platform"
+          content="Welcome to Edustipend playlist homepage, your best music play platform"
         />
         <link rel="canonical" href="/" />
       </Helmet>

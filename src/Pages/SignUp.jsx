@@ -19,8 +19,8 @@ const SignUp = () => {
     <>
       {/* REACT HELMET IS USED FOR SEO TRACKING */}
       <Helmet>
-        <title>Signup - Edustipends Playlist</title>
-        <meta name="description" content="Edustipends playlist signup page" />
+        <title>Signup - Edustipend Playlist</title>
+        <meta name="description" content="Edustipend playlist signup page" />
         <link rel="canonical" href="/signup" />
       </Helmet>
       <div className="signup-div">

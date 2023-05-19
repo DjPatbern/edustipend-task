@@ -10,8 +10,8 @@ const Contact = () => {
     <>
       {/* REACT HELMET IS USED FOR SEO TRACKING */}
       <Helmet>
-        <title>Contact - Edustipends Playlist</title>
-        <meta name="description" content="Contact Edustipends playlist page" />
+        <title>Contact - Edustipend Playlist</title>
+        <meta name="description" content="Edustipend playlist's Contact page" />
         <link rel="canonical" href="/contact" />
       </Helmet>
 

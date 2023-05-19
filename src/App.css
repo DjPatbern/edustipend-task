@@ -38,6 +38,11 @@
   cursor: pointer;
 }
 
+.home-icon{
+  width: 20px;
+  height: 20px;
+}
+
 /* HOME PAGE CSS */
 .homepage-container {
   background-color: rgb(241, 243, 245);
@@ -197,7 +202,12 @@
   }
 
   .homepage-container {
-    height: 76vh;
+    height: 100%;
+  }
+
+  .home-icon{
+    width: 10px;
+    height: 10px;
   }
 
   .trending {
@@ -218,6 +228,8 @@
 
   .phonenav-link {
     color: black;
+    width: 30px;
+    height: 30px;
   }
 
   .signup-div,

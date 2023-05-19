@@ -4,7 +4,7 @@ import {AiTwotoneHome} from "react-icons/ai"
 import { useRegisterContext } from "../ContextManagers/SignupContext";
 
 const NavBar = () => {
-  const {auth} = useRegisterContext()
+  const {auth, handleLogout} = useRegisterContext()
   const location = useLocation();
 
   const { pathname } = location;
@@ -12,10 +12,10 @@ const NavBar = () => {
   const splitLocation = pathname.split("/");
   return (
     <div className="nav">
-      <div><Link to="/"><AiTwotoneHome /></Link></div>
+      <div><Link to="/" ><AiTwotoneHome className="home-icon"/></Link></div>
       <div>
         <Link to="/contact" id={splitLocation[1] === "contact" ? "active" : ""}>Contact us</Link>
-        <Link to="/signup" id={splitLocation[1] === "signup" ? "active" : ""}>
+        <Link to="/signup" id={splitLocation[1] === "signup" ? "active" : ""} onClick={auth && handleLogout}>
           { auth ? "Logout" : "Signup"}
         </Link>
       </div>

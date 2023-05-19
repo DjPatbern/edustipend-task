@@ -19,8 +19,8 @@ const Playlist = () => {
     <>
       {/* REACT HELMET IS USED FOR SEO TRACKING */}
       <Helmet>
-        <title>Playlist - Edustipends Playlist</title>
-        <meta name="description" content="Your Edustipends playlist page" />
+        <title>Playlist - Edustipend Playlist</title>
+        <meta name="description" content="Your Edustipend playlist page" />
         <link rel="canonical" href="/playlist" />
       </Helmet>
       <div className="playlist-div">
@@ -51,6 +51,7 @@ const Playlist = () => {
           Clear List
         </button>
       </div>
+
     </>
   );
 };

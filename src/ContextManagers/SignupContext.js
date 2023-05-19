@@ -56,7 +56,7 @@ const RegisterDataSource = () => {
     } else if (password.length < 5) {
       toast.error("Password must be more than 5 characters");
     } else if (password !== confirmPassword) {
-      toast.error("Account not found");
+      toast.error("Account not found, please sign up");
     } else {
       toast.error("Please fill all input fields");
     }
@@ -64,10 +64,9 @@ const RegisterDataSource = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-
     setUser(newUser);
     setAuth(false);
-    navigate("/");
+    navigate("/signup");
     window.location.reload();
     toast.success("You are Logged Out now");
   }; //LOGIC TO LOG AN ALREADY SIGNED IN USER OUT OF THE WEBSITE
